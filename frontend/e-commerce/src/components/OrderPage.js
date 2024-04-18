@@ -17,6 +17,7 @@ const OrderPage = () => {
                     ShippingAddress: localStorage.getItem("ShippingAddress"),
                     items: items
                 };
+                console.log(updatedCart)
                 setCart(updatedCart);
             })
             .catch(error => console.error('Error fetching cart:', error));
@@ -49,6 +50,7 @@ const OrderPage = () => {
                 body: JSON.stringify({"orderData":cart})
             });
             if (response.ok) {
+                console.log(cart)
                 console.log('Order submitted successfully');
                 alert("order submitted")
                 // Handle successful order submission (e.g., redirect to thank you page)

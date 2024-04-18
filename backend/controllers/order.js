@@ -4,7 +4,15 @@ const Order = require("../models/orderModel");
 const placeOrder = async (req, res) => {
     try {
         const {orderData} = req.body;
-        userOrder=new Order(orderData)
+        // const {orderData.User}=req.body
+        console.log(orderData)
+        const User=orderData.User
+        const shippingAddress=orderData.ShippingAddress
+        console.log(User,shippingAddress)
+        userOrder=new Order()
+        userOrder.User=User
+        userOrder.shippingAddress=shippingAddress
+        
         await userOrder.save();
         res.status(201).json(Order);
     } catch (error) {

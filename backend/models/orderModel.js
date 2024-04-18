@@ -17,9 +17,11 @@ const orderSchema = new mongoose.Schema({
     }],
     shippingAddress: {
         type: String,
+        // required:true
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
+        // required:true
     }
 
 });
