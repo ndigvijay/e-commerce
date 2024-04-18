@@ -6,8 +6,8 @@ const HomePage = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        if(!localStorage.getItem("userId")){
-            window.location.href="/login"
+        if (!localStorage.getItem("userId")) {
+            window.location.href = "/login"
         }
 
         fetch('http://localhost:5000/api/products')
@@ -19,19 +19,16 @@ const HomePage = () => {
     const handleViewCart = () => {
         window.location.href = '/order';
     };
-    const handleLogout=()=>{
-        localStorage.clear()
-        window.location.href="/"
-    }
 
+    const handleLogout = () => {
+        localStorage.clear()
+        window.location.href = "/"
+    }
 
     return (
         <div className="home-page">
+            <button className="logout"onClick={handleLogout}>Logout</button>
             <h1>Welcome to Our Store</h1>
-            <button onClick={handleLogout}>logout</button>
-            <div className="buttons">
-                <button onClick={handleViewCart}>View Cart</button>
-            </div>
             <div className="products">
                 {products.map(product => (
                     <div key={product._id} className="product">
@@ -41,6 +38,9 @@ const HomePage = () => {
                         <Link to={`/product/${product._id}`} className="view-details">View Details</Link>
                     </div>
                 ))}
+            </div>
+            <div className="buttons">
+                <button onClick={handleViewCart}>View Cart</button>
             </div>
         </div>
     );

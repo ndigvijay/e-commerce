@@ -1,50 +1,91 @@
 .admin-dashboard {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(100px);
   }
   
   .admin-dashboard h1 {
     text-align: center;
+    margin-bottom: 20px;
   }
   
   .admin-dashboard form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
   }
   
   .admin-dashboard input {
-    width: 100%;
-    padding: 10px;
     margin-bottom: 10px;
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
   }
   
   .admin-dashboard button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: whitesmoke;
+    font-family: Arial;
+    font-size: 20px;
+    color: black;
+    padding: 14px 20px;
+    margin-top: 10px;
     border: none;
     cursor: pointer;
+    opacity: 1;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
   }
   
   .admin-dashboard button:hover {
-    background-color: #0056b3;
+    background-color: rgb(40, 40, 40);
+    color: rgb(31, 141, 228);
   }
   
-  .admin-dashboard .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
-  .admin-dashboard .product {
-    border: 1px solid #ccc;
-    padding: 10px;
+  .product {
+    flex-grow: 1;
+    background-color: rgb(47, 44, 44);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 8px 4px rgb(82, 80, 80);
+    margin: 10px;
+    transition: box-shadow 0.3s ease;
   }
   
-  .admin-dashboard .product h2 {
-    margin-top: 0;
+  .product:hover {
+    box-shadow: 0 0 12px 6px black;
   }
   
-  .admin-dashboard .product button {
+  .product h2,
+  .product p {
+    color: whitesmoke;
+    margin-bottom: 10px;
+  }
+  
+  .product button {
+    background-color: whitesmoke;
+    font-family: Arial;
+    font-size: 16px;
+    color: black;
+    padding: 10px 20px;
     margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
   }
+  
+  .product button:hover {
+    background-color: rgb(40, 40, 40);
+    color: rgb(31, 141, 228);
+  }
+  

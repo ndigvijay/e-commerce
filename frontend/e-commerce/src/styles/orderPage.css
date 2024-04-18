@@ -1,48 +1,66 @@
-/* orderPage.css */
+body {
+    color: whitesmoke;
+    opacity: 0.85;
+    background-color: black;
+    background-image: url("https://i.pinimg.com/originals/ea/1d/97/ea1d9797c9bf3dda7a23b238e5e4b364.jpg");
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
 .order-page {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
-  }
-  
-  .order-page h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(100px); /* Adjust this value for vertical alignment */
+}
+
+.order-page h1 {
     text-align: center;
-  }
-  
-  .order-page ul {
+    margin-bottom: 20px;
+}
+
+.order-list {
     list-style: none;
     padding: 0;
-  }
-  
-  .order-page li {
+    margin: 0;
+}
+
+.order-item {
+    background-color: rgb(55, 53, 53);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 8px 4px black;
+    margin-bottom: 20px;
+}
+
+.order-item ul {
+    padding: 0;
+    margin: 0;
+}
+
+.order-item li {
+    color: whitesmoke;
     margin-bottom: 10px;
-  }
-  
-  .order-page li ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .order-page li ul li {
-    margin-bottom: 5px;
-  }
-  
-  .order-page p {
-    font-weight: bold;
-    text-align: right;
-  }
-  
-  .order-page button {
-    display: block;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+}
+
+.submit-order-btn {
+    background-color: whitesmoke;
+    font-family: Arial;
+    font-size: 20px;
+    color: black;
+    padding: 14px 20px;
+    margin-top: 20px;
     border: none;
     cursor: pointer;
-  }
-  
-  .order-page button:hover {
-    background-color: #0056b3;
-  }
-  
+    opacity: 1;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-order-btn:hover {
+    background-color: rgb(40, 40, 40);
+    color: rgb(31, 141, 228);
+}

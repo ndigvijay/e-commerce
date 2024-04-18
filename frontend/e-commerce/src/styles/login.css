@@ -1,35 +1,94 @@
-.login-container {
+/* .login-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-}
+} */
 
-.login-container h2 {
+/* .login-container h2 {
     text-align: center;
     margin-bottom: 20px;
+} */
+
+body {
+    color: whitesmoke;
+    opacity: 0.85;
+    background-color: black;
+    background-image: url("https://i.pinimg.com/originals/ea/1d/97/ea1d9797c9bf3dda7a23b238e5e4b364.jpg");
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+.login-form{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(0%, 8%);
+  width: 400px;
+  height: 350px;
+  padding: 30px 20px;
+  background-color: black;
+  margin: 0 auto;
+  margin-top: 100px;
+  border: 20px solid black;
+  box-shadow: 0 0 8px 4px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: 200ms;
 }
 
 .login-container input {
-    width: 100%;
+    /* width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 5px; */
+    font-size: 20px;
+    color: whitesmoke;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: rgb(40, 40, 40);
+    border-radius: 15px;
+    width: 92%;
 }
 
 .login-container button {
-    width: 100%;
+    /* width: 100%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
+    cursor: pointer; */
+    width: 100%;
+    background-color: whitesmoke;
+    font-family: Arial;
+    font-size: 20px;
+    color: black;
+    padding: 14px 20px;
+    margin: auto;
+    border: none;
     cursor: pointer;
+    opacity: 1;
+    border-radius: 15px;
+    transform: translate(0%, 0%);
+    transition: 200ms;
+    height: 55px;
+    
 }
 
 .login-container button:hover {
-    background-color: #0056b3;
+    color: rgb(31, 141, 228);
+    transition: 200ms;
+    border: none;
+    background-color: rgb(40, 40, 40);
+    border-radius: 8px;
 }
