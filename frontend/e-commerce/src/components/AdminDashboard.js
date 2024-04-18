@@ -85,7 +85,7 @@ const AdminDashboard = () => {
     return (
         <div className="admin-dashboard">
             <h1>Admin Dashboard</h1>
-            <h1>add</h1>
+            <h1>add and edit </h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
