@@ -1,0 +1,48 @@
+/* orderPage.css */
+.order-page {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .order-page h1 {
+    text-align: center;
+  }
+  
+  .order-page ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-page li {
+    margin-bottom: 10px;
+  }
+  
+  .order-page li ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-page li ul li {
+    margin-bottom: 5px;
+  }
+  
+  .order-page p {
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .order-page button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .order-page button:hover {
+    background-color: #0056b3;
+  }
+  

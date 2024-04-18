@@ -1,0 +1,50 @@
+.admin-dashboard {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .admin-dashboard h1 {
+    text-align: center;
+  }
+  
+  .admin-dashboard form {
+    margin-bottom: 20px;
+  }
+  
+  .admin-dashboard input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .admin-dashboard button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin-dashboard button:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-dashboard .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .admin-dashboard .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .admin-dashboard .product h2 {
+    margin-top: 0;
+  }
+  
+  .admin-dashboard .product button {
+    margin-top: 10px;
+  }

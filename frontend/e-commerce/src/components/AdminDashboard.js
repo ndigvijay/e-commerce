@@ -124,6 +124,7 @@ const AdminDashboard = () => {
                         <p>{product.description}</p>
                         <p>Price: ${product.price}</p>
                         <button onClick={() => handleEdit(product)}>Edit</button>
+                        <br/>
                         <button onClick={() => handleDelete(product._id)}>Delete</button>
                     </div>
                 ))}

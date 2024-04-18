@@ -1,31 +1,55 @@
-.home-page {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .product {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .view-details {
-    display: block;
-    margin-top: 10px;
-    text-decoration: none;
-    background-color: #007bff;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .view-details:hover {
-    background-color: #0056b3;
-  }
-  
+home-page {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.home-page h1 {
+  text-align: center;
+}
+
+.home-page button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.home-page button:hover {
+  background-color: #0056b3;
+}
+
+.home-page .buttons {
+  text-align: center;
+}
+
+.home-page .products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.home-page .product {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.home-page .product h2 {
+  margin-top: 0;
+}
+
+.home-page .product .view-details {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  text-decoration: none;
+}
+
+.home-page .product .view-details:hover {
+  background-color: #0056b3;
+}

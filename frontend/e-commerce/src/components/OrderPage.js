@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "../styles/orderPage.css";
 
 const OrderPage = () => {
     const [cart, setCart] = useState({ User: "", ShippingAddress: "", items: [] });
@@ -63,11 +64,11 @@ const OrderPage = () => {
     };
 
     return (
-        <div>
+        <div  className="order-page" >
             <h1>Order Summary</h1>
-            <ul>
+            <ul className="order-list">
                 {cart.items && cart.items.map(item => (
-                    <li key={item.id}>
+                    <li key={item.id} className="order-item">
                         <ul>
                             <li>{item.name}</li>
                             <li>{item.description}</li>
@@ -77,7 +78,7 @@ const OrderPage = () => {
                 ))}
             </ul>
             <p>Total: ${totalPrice}</p>
-            <button onClick={handleSubmitOrder}>Submit Order</button>
+            <button onClick={handleSubmitOrder} className="submit-order-btn">Submit Order</button>
         </div>
     );
 };
