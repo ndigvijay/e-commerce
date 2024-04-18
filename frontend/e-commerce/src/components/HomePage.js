@@ -4,16 +4,34 @@ import '../styles/homepage.css';
 
 const HomePage = () => {
     const [products, setProducts] = useState([]);
+
     useEffect(() => {
+        if(!localStorage.getItem("userId")){
+            window.location.href="/login"
+        }
+
         fetch('http://localhost:5000/api/products')
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.error('Error fetching products:', error));
     }, []);
 
+    const handleViewCart = () => {
+        window.location.href = '/order';
+    };
+    const handleLogout=()=>{
+        localStorage.clear()
+        window.location.href="/"
+    }
+
+
     return (
         <div className="home-page">
             <h1>Welcome to Our Store</h1>
+            <button onClick={handleLogout}>logout</button>
+            <div className="buttons">
+                <button onClick={handleViewCart}>View Cart</button>
+            </div>
             <div className="products">
                 {products.map(product => (
                     <div key={product._id} className="product">

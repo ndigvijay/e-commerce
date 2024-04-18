@@ -2,11 +2,11 @@ const Order = require("../models/orderModel");
 
 // Place Order
 const placeOrder = async (req, res) => {
-    const { user, products, totalPrice, shippingAddress } = req.body;
     try {
-        const order = new Order({ user, products, totalPrice, shippingAddress });
-        await order.save();
-        res.status(201).json(order);
+        const {orderData} = req.body;
+        userOrder=new Order(orderData)
+        await userOrder.save();
+        res.status(201).json(Order);
     } catch (error) {
         console.error("Error placing order:", error);
         res.status(500).json({ error: "Internal server error" });

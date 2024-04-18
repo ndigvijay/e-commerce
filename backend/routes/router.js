@@ -16,6 +16,12 @@ const {
     deleteProduct
 } = require("../controllers/product.js");
 
+const {
+    addToCart,
+    getCart,
+    clearCart
+} = require("../controllers/cart.js");
+
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -39,5 +45,12 @@ router.get("/order/:id", getOrderById);
 router.get("/orders", getAllOrders);
 router.put("/order/:id", updateOrderStatus);
 router.delete("/order/:id", deleteOrder);
+
+
+// Cart routes
+router.post("/cart/add", addToCart);
+router.get("/cart", getCart);
+router.delete("/cart/clear", clearCart);
+
 
 module.exports = router;
