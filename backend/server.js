@@ -7,7 +7,7 @@ const cors =require("cors")
 
 async function connectToMongoDB() {
     try {
-        await mongoose.connect("mongodb://localhost:27017/e-commerce", {
+        await mongoose.connect("mongodb+srv://ndv005:ndv005@cluster0.cpdeub1.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
