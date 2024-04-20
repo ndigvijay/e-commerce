@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  server:
+    build: .
+    container_name: mern-server
+    ports:
+      - '5000:5000'
+    environment:
+      - MONGO_URI=mongodb+srv://ndv005:ndv005@cluster0.cpdeub1.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0
