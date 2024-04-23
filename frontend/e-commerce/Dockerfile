@@ -1,5 +1,5 @@
-# Use a Node.js base image for building
-FROM node:16 as build
+# Use the official Node.js 16 image as base
+FROM --platform=linux/amd64 node:16 AS build
 
 # Set the working directory
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Use a lightweight Node.js image for serving the built assets
-FROM node:16-alpine
+FROM --platform=linux/amd64 node:16-alpine
 
 # Set the working directory
 WORKDIR /app
