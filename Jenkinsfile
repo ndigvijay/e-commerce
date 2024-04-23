@@ -1,50 +1,31 @@
-// pipeline {
-//     agent any
-
-//     stages {
-//         stage('Build Backend') {
-//             steps {
-//                 // Checkout code from repository
-//                 checkout scm
-                
-//                 // Navigate to the backend directory
-//                 dir('backend') {
-//                     // Install dependencies and start the backend server
-//                     sh 'npm install'
-//                     sh 'npm start'
-//                 }
-//             }
-//         }
-
-//         stage('Build Frontend') {
-//             steps {
-//                 // Navigate to the frontend/e-commerce directory
-//                 dir('frontend/e-commerce') {
-//                     // Install dependencies and start the frontend server
-//                     sh 'npm install'
-//                     sh 'npm start'
-//                 }
-//             }
-//         }
-//     }
-// }
-
-
 pipeline {
-    agent any
-
-    tools {nodejs "node"}
+    agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+    }
+     environment {
+            CI = 'true'
+        }
     stages {
         stage('Build') {
             steps {
-                // Checkout code from repository
-                checkout scm
-                
-                git "https://github.com/ndigvijay/e-commerce.git"
-                dir('backend') {
-                    bat 'npm start'
-                }
+                sh 'npm install'
             }
         }
+        stage('Test') {
+                    steps {
+                        sh './jenkins/scripts/test.sh'
+                    }
+                }
+                stage('Deliver') {
+                            steps {
+                                sh './jenkins/scripts/deliver.sh'
+                                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                                sh './jenkins/scripts/kill.sh'
+                            }
+                        }
+
     }
 }
