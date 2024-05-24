@@ -1,31 +1,22 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
-    }
-     environment {
-            CI = 'true'
-        }
+    agent any
     stages {
-        stage('Build') {
+        stage('Build and Run Backend') {
             steps {
-                sh 'npm install'
+                dir('backend') {
+                    sh 'node --version'
+                    sh 'npm install'
+                    sh 'npm start &'
+                }
             }
         }
-        stage('Test') {
-                    steps {
-                        sh './jenkins/scripts/test.sh'
-                    }
+        stage('Build and Run Frontend') {
+            steps {
+                dir('frontend/e-commerce') {
+                    sh 'npm install'
+                    sh 'npm start &'
                 }
-                stage('Deliver') {
-                            steps {
-                                sh './jenkins/scripts/deliver.sh'
-                                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                                sh './jenkins/scripts/kill.sh'
-                            }
-                        }
-
+            }
+        }
     }
 }
